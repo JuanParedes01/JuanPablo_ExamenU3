@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comentarios;
+use App\Http\Requests\CreateProjectRequest;
 
 class GeneralController extends Controller
 {
@@ -55,22 +57,22 @@ class GeneralController extends Controller
         return view('contact');
     }
         //Función Mensaje
-        public function mensaje(OpinionRequest $request)
+        public function mensaje(CreateProjectRequest $request)
         {
-            $Nombre = $request->get('nombreM');
-            $Email = $request->get('emailM');
-            $Mensaje = $request->get('mensajeM');
+            $Nombre = $request->get('nombreC');
+            $Email = $request->get('emailC');
+            $Mensaje = $request->get('mensajeC');
     
-            $Opinion = new Opinion(array(
+            $Comentarios = new Comentarios(array(
                 'Nombre' => $Nombre,
                 'Email' => $Email,
                 'Mensaje' => $Mensaje,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s')
             ));
-            $Opinion->save(); 
+            $Comentarios->save(); 
     
-            return redirect('/contacto')->with('status', 'Mensaje Enviado');
+            return redirect('/contact')->with('status', 'Mensaje Enviado');
 
             
         }

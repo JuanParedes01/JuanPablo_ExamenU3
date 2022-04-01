@@ -74,7 +74,7 @@
        
         </div>
       </div> <!-- .container -->
-    </div> <!-- .page-section -->
+      <form action="{{route('mensaje')}}" method="post">
      <!-- Errores -->
      @foreach ($errors->all() as $error)
      <p class="alert alert-danger">{{ $error}}</p><br>
@@ -84,17 +84,17 @@
     <div class="row">
       <div class="col-md-12 mb-3">
         <div class="form-group">
-          <input type="text" class="form-control" name="nombreM" id="nombreM" placeholder="Nombre" required maxlength="50" minlength="4"/>
+          <input type="text" class="form-control" name="nombreC" id="nombreC" placeholder="Nombre" required maxlength="50" minlength="4"/>
         </div>
       </div>
       <div class="col-md-12 mb-3">
         <div class="form-group">
-          <input type="text" class="form-control" name="emailM" id="emailM" placeholder="Email" required data-rule="email" maxlength="50" minlength="6"/>
+          <input type="text" class="form-control" name="emailC" id="emailC" placeholder="Email" required data-rule="email" maxlength="50" minlength="6"/>
         </div>
       </div>
       <div class="col-md-12 mb-3">
         <div class="form-group">
-          <textarea class="form-control" name="mensajeM" rows="5" required placeholder="Mensaje" maxlength="3000" minlength="4"></textarea>
+          <textarea class="form-control" name="mensajeC" rows="5" required placeholder="Mensaje" maxlength="3000" minlength="4"></textarea>
         </div>
       </div>
       <!-- Mensaje de Enviado -->

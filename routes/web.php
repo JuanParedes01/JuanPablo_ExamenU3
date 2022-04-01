@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\GeneralController;
-use App\http\Controllers\ApiController;
+use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ Route::get('/contact', [GeneralController::class, 'contact'])->name('contact');
 
 
 //Mensaje y Comentarios
-Route::post('/mensaje', [ViewsController::class,'mensaje']) ->name('mensaje');
+Route::post('/mensaje', [GeneralController::class,'mensaje']) ->name('mensaje');
 
 Route::post('/api', [ApiController::class,'submit']) ->name('api');
 
